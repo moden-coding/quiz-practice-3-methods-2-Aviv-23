@@ -51,9 +51,18 @@
  */
 public class App {
     // You will MODIFY THIS ONE METHOD across tasks 1–5. Do not create new methods.
-    public static void calculateDiscount() {
-
+    public static double calculateDiscount(String mode,double amount) {
+   if( amount < 0 || amount > 2000){
+    return -1;
+    }else if(mode.equals("percent")){
+            return 0.5*amount;     
+        }else if(mode.equals("fixed")){
+return 20;
+        }else{
+            return -1;
+        }
     }
+
 
     public static void main(String[] args) {
         // B- range
@@ -62,7 +71,7 @@ public class App {
 
         // B range
         // System.out.println("Task 2:");
-        // calculateDiscount(20); // should PRINT 10.0
+        //calculateDiscount(20); // should PRINT 10.0
         // calculateDiscount(50); // should PRINT 25.0
 
         // B+ range
@@ -70,19 +79,19 @@ public class App {
         // double d1 = calculateDiscount(20); // expect 10.0
         // double d2 = calculateDiscount(50); // expect 25.0
         // System.out.println(d1);
-        // System.out.println(d2);
+       // System.out.println(d2);
 
         // A range
         // System.out.println("Task 4:");
         // System.out.println(calculateDiscount(-5));   // -1.0 (invalid)
-        // System.out.println(calculateDiscount(1000)); // 500.0 (valid)
-        // System.out.println(calculateDiscount(2001)); // -1.0 (too large)
+         //System.out.println(calculateDiscount(1000)); // 500.0 (valid)
+         //System.out.println(calculateDiscount(2001)); // -1.0 (too large)
 
         // A+ range
-        // System.out.println("Task 5:");
-        // System.out.println(calculateDiscount("percent", 200)); // 100.0
-        // System.out.println(calculateDiscount("fixed", 200));   // 20.0
-        // System.out.println(calculateDiscount("none", 200));    // -1.0 (unknown)
-        // System.out.println(calculateDiscount("percent", -1));  // -1.0 (invalid)
+        System.out.println("Task 5:");
+         System.out.println(calculateDiscount("percent", 200)); // 100.0
+         System.out.println(calculateDiscount("fixed", 200));   // 20.0
+         System.out.println(calculateDiscount("none", 200));    // -1.0 (unknown)
+         System.out.println(calculateDiscount("percent", -1));  // -1.0 (invalid)
     }
 }
